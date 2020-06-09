@@ -1,6 +1,6 @@
 %
 O9004 (CDP End Program) ;
-(Copyright 2018 Versabuilt, Inc.) ;
+(Copyright 2018 VersaBuilt, Inc.) ;
 (Controller: Haas Legacy) ;
 (Protocol: CDP v3) ;
 (Command Macro: 890) ;

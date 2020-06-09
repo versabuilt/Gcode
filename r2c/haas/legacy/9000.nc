@@ -1,11 +1,10 @@
 %
 O9000 (CDP Main, dispatcher Legacy) ;
-(Copyright 2018 Versabuilt, Inc.) ;
+(Copyright 2018 VersaBuilt, Inc.) ;
 (Controller: Haas Legacy) ;
 (Protocol: CDP v3) ;
 (Command Macro: 890) ;
 (Parameter Macro: 891) ;
-
 
 (Program not requested, alarm out,) ;
 IF[#890 NE 1] GOTO3 ;
