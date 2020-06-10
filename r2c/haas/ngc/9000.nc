@@ -9,6 +9,9 @@ O9000 (CDP Main, dispatcher NGC) ;
 (Program not requested, alarm out) ;
 IF[#10000 NE 1] GOTO3 ;
 
+(Ping request, resolve immediately) ;
+IF[#10001 EQ 0] M98 P9004 ;
+
 (Run requested program) ;
 M98 P[#10001] ;
 
