@@ -18,6 +18,12 @@ G103 P1 ;
 ;
 ;
 ;
+;
+;
+;
+;
+;
+;
 
 (Command Macro Wait Loop) ;
 N1 ;
@@ -28,6 +34,8 @@ GOTO1 ;
 
 (Return on success) ;
 N2 ;
+(Enable lookahead) ;
+G103 P0 ;
 M99 ;
 
 (Alarm out after fail reported) ;

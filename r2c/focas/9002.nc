@@ -26,6 +26,13 @@ G5.1 Q0 ;
 ;
 ;
 ;
+;
+;
+;
+;
+;
+;
+
 
 (Close Command) ;
 IF[#3 EQ 0] GOTO1 ;
@@ -88,13 +95,11 @@ N6 ;
 #890= 7 ;
 #891= #7 ;
 G65 P9001 C00 ;
+(Enable lookahead) ;
+G5.1 Q1 ;
 M99 ;
 
 (Float Operation) ;
 N7 ;
 #3000= 15 (Float not supported) ;
-
-(Enable lookahead) ;
-G5.1 Q1 ;
-
 %

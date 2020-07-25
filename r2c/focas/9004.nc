@@ -15,15 +15,19 @@ G5.1 Q0 ;
 ;
 ;
 ;
+;
+;
+;
+;
+;
+;
 
 (Write program success to command macro, tells vbxc we are done) ;
 #890= 2 ;
 
-(End execution and return to top of 9000 program) ;
-M30 ;
-
-
 (Enable lookahead) ;
 G5.1 Q1 ;
 
+(End execution and return to top of 9000 program) ;
+M30 ;
 %

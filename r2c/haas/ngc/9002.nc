@@ -26,7 +26,12 @@ G103 P1 ;
 ;
 ;
 ;
-
+;
+;
+;
+;
+;
+;
 (Close Command) ;
 IF[#3 EQ 0] GOTO1 ;
 
@@ -53,6 +58,8 @@ N1 ;
 #10000= 6 ;
 #10001= #7 ;
 G65 P9001 C00 ;
+(Enable lookahead) ;
+G103 P0 ;
 M99 ;
 
 (Open Command Operation) ;
@@ -60,6 +67,8 @@ N2 ;
 #10000= 5 ;
 #10001= #7 ;
 G65 P9001 C00 ;
+(Enable lookahead) ;
+G103 P0 ;
 M99 ;
 
 (Close No Error Command Operation) ;
@@ -67,6 +76,8 @@ N3 ;
 #10000= 10 ;
 #10001= #7 ;
 G65 P9001 C00 ;
+(Enable lookahead) ;
+G103 P0 ;
 M99 ;
 
 (Open No Error Command Operation) ;
@@ -74,6 +85,8 @@ N4 ;
 #10000= 9 ;
 #10001= #7 ;
 G65 P9001 C00 ;
+(Enable lookahead) ;
+G103 P0 ;
 M99 ;
 
 (Close Clamp Operation) ;
@@ -81,6 +94,8 @@ N5 ;
 #10000= 8 ;
 #10001= #7 ;
 G65 P9001 C00 ;
+(Enable lookahead) ;
+G103 P0 ;
 M99 ;
 
 (Open Clamp Operation) ;
@@ -88,10 +103,11 @@ N6 ;
 #10000= 7 ;
 #10001= #7 ;
 G65 P9001 C00 ;
+(Enable lookahead) ;
+G103 P0 ;
 M99 ;
 
 (Float Operation) ;
 N7 ;
 #3000= 15 (Float not supported) ;
-
 %
