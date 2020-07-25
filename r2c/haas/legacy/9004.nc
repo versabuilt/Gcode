@@ -19,11 +19,12 @@ G103 P1 ;
 (Write program success to command macro, tells vbxc we are done) ;
 #890= 2 ;
 
+(Enable lookahead) ;
+G103 P0 ;
+
 (End execution and return to top of 9000 program) ;
 M30 ;
 
 
-(Enable lookahead) ;
-G103 P0 ;
 
 %
