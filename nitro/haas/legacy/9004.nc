@@ -17,7 +17,7 @@ G103 P1 ;
 ;
 
 (Write program success to command macro, tells vbxc we are done) ;
-#890= 2 ;
+#890 = 2 ;
 
 (End execution and return to top of 9000 program) ;
 M30 ;

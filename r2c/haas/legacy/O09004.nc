@@ -18,7 +18,7 @@ G103 P1
 
 
 (Write program success to command macro, tells vbxc we are done) 
-#890= 2 
+#890 = 2;
 
 
 
