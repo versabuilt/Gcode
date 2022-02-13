@@ -20,7 +20,6 @@ IF[#101 EQ 9] GOTO 9
 IF[#101 EQ 10] GOTO 10
 IF[#101 EQ 11] GOTO 11
 IF[#101 EQ 12] GOTO 12
-IF[#101 EQ 13] GOTO 13
 
 #3000=5(VB Dispatcher Macro Error)
 
@@ -83,12 +82,12 @@ N10
 M98 P1236 
 GOTO 99
 
-N12 
+N11 
 (Swing Pallet 2 back to the robot)
-#101=13
+#101=12
 GOTO 99
 
-N13 
+N12 
 (Op 2 Pallet 2)
 #101=1
 M98 P1234 
