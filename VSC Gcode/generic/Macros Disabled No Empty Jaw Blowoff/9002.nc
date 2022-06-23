@@ -1,18 +1,15 @@
 %
-O9002		(Dispatcher Program - Two Op - Generic Macro Disabled) 
+O9002		(Dispatcher Program - Two Op - Generic Macro Disabled with No Empty Jaw Blow Off) 
 
-G103 P0.	            (Enable Look-ahead)
+N10
 (Insert Op1 Program)    (Op1 Program)
-G103 P1.                (Disable Look-ahead)
 M51                     (Set Handshake)
 M0                      (Wait for robot)
 M61                     (Clear Handshake)
-G103 P0.	            (Enable Look-ahead)
 (Insert Op2 Program)    (Op2 Program)
-G103 P1.                (Disable Look-ahead)
 M51                     (Set Handshake)
 M0                      (Wait for robot)
 M61                     (Clear Handshake)
-G103 P0                 (Enable Look-ahead)
-M99             
+GOTO 10
+M30            
 %
