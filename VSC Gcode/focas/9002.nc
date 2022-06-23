@@ -1,6 +1,6 @@
 %
-O9002 (CDP Vise Controll) ;
-(Backwards compatible with mailbox vise controll) ;
+O9002 (CDP Vise Control) ;
+(Backwards compatible with mailbox vise control) ;
 (Copyright 2018 Versabuilt, Inc.) ;
 (Controller: Fanuc) ;
 (Protocol: CDP v2) ;

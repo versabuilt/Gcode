@@ -1,6 +1,6 @@
 %
-O9002 (CDP Vise Controll) ;
-(Backwards compatible with mailbox vise controll) ;
+O9002 (CDP Vise Control) ;
+(Backwards compatible with mailbox vise control) ;
 (Copyright 2018 Versabuilt, Inc.) ;
 (Controller: Haas NGC) ;
 (Protocol: CDP v3) ;
@@ -16,7 +16,9 @@ O9002 (CDP Vise Controll) ;
 (cc = 3 - open no error) ;
 (cc = 4 - close clamp) ;
 (cc = 5 - open clamp) ;
-(cc = 6 - float NO LONGER SUPPORTED) ;
+(cc = 6 - exhaust) ;
+(cc = 7 - pressurized) ;
+(cc = 8 - float NO LONGER SUPPORTED) ;
 
 (Disable lookahead, needs several lines after) ;
 G103 P1 ;
@@ -50,8 +52,14 @@ IF[#3 EQ 4] GOTO5 ;
 (Open Clamp) ;
 IF[#3 EQ 5] GOTO6 ;
 
+(Exhaust) ;
+IF [ #3 EQ 6] GOTO7 ;
+
+(Pressurized) ;
+IF [ #3 EQ 7] GOTO8 ;
+
 (Float) ;
-IF[#3 EQ 6] GOTO7 ;
+IF [ #3 EQ 8 ] GOTO9 ; 
 
 (Close Command Operation) ;
 N1 ;
@@ -107,7 +115,25 @@ G65 P9001 C00 ;
 G103 P0 ;
 M99 ;
 
-(Float Operation) ;
+(Exhaust Command Operation) ;
 N7 ;
+#10000= 12 ;
+#10001= #7 ;
+G65 P9001 C00 ;
+(Enable lookahead) ;
+G103 P0 ;
+M99 ;
+
+(Pressurized Command Operation) ;
+N8 ;
+#10000= 13 ;
+#10001= #7 ;
+G65 P9001 C00 ;
+(Enable lookahead) ;
+G103 P0 ;
+M99 ;
+
+(Float Operation) ;
+N9 ;
 #3000= 15 (Float not supported) ;
 %
