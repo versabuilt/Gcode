@@ -16,7 +16,9 @@ O9002 (CDP Vise Controll) ;
 (cc = 3 - open no error) ;
 (cc = 4 - close clamp) ;
 (cc = 5 - open clamp) ;
-(cc = 6 - float NO LONGER SUPPORTED) ;
+(cc = 6 - exhaust) ;
+(cc = 7 - pressurized) ;
+(cc = 8 - float NO LONGER SUPPORTED) ;
 
 (Disable lookahead, needs several empty lines after) ;
 G5.1 Q0 ;
@@ -52,8 +54,14 @@ IF[#3 EQ 4] GOTO5 ;
 (Open Clamp) ;
 IF[#3 EQ 5] GOTO6 ;
 
+(Exhaust) ;
+IF [ #3 EQ 6] GOTO7 ;
+
+(Pressurized) ;
+IF [ #3 EQ 7] GOTO8 ;
+
 (Float) ;
-IF[#3 EQ 6] GOTO7 ;
+IF [ #3 EQ 8 ] GOTO9 ; 
 
 (Close Command Operation) ;
 N1 ;
@@ -99,7 +107,21 @@ G65 P9001 C00 ;
 G5.1 Q1 ;
 M99 ;
 
-(Float Operation) ;
+(Exhaust Command Operation) ;
 N7 ;
+#890= 12 ;
+#891= #7 ;
+G65 P9001 C00 ;
+M99 ;
+
+(Pressurized Command Operation) ;
+N8 ;
+#890= 13 ;
+#891= #7 ;
+G65 P9001 C00 ;
+M99 ;
+
+(Float Operation) ;
+N9 ;
 #3000= 15 (Float not supported) ;
 %
