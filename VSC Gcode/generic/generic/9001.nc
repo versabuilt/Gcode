@@ -10,7 +10,7 @@ M0 (Wait for robot to complete transfer)
 (Clear handshake using M code controlable relay)
 
 (*** BEGIN OPTIONAL TABLE WASH SECTION ONLY TO BE INCLUDED IF PART CONFIGURATION USES OP1 EMPTY JAWS BLOW-OFF ***)
-(Enter CNC specific code to enable look-ahead)
+(Enter CNC specific code to enable look-ahead.)
 (M98 P8001 call Table Wash program ONLY if part configuration uses OP1 empty jaws blowoff)
 (Enter CNC specific code to disable look-ahead)
 (Set Handshake using M code controlable relay)
