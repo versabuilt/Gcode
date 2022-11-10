@@ -1,7 +1,6 @@
 %
 O9000		(Dispatcher Program - One Op) 
 
-N10
 (*** BEGIN OPTIONAL RUN CNC SETTLE PROGRAM ONLY TO BE INCLUDED IF PART CONFIGURATION USES RUN CNC SETTLE PROGRAM ***)
 (Enter CNC specific code to enable look-ahead)
 (M98 PXXXX call Op1 as a subprogram or paste in op1 gcode)
@@ -27,6 +26,5 @@ M0 (Wait for robot to complete transfer)
 (Enter CNC specific code to enable look-ahead)
 (*** END OPTIONAL TABLE WASH SECTION ***)
 
-GOTO 10          
-M30
+M99
 %
