@@ -2,6 +2,15 @@
 O9002		(Dispatcher Program - Two Op)
 
 
+(*** BEGIN OPTIONAL TABLE LOAD SECTION ONLY TO BE INCLUDED IF PART CONFIGURATION USES Run Table Load Program for Vise Load after Op Transfer ***)
+(Enter CNC specific code to enable look-ahead)
+(M98 P8002 call Table Load 2 program ONLY if part configuration uses Run Table Load Program for Vise Load after Op Transfer)
+(Enter CNC specific code to disable look-ahead)
+(Set Handshake using M code controlable relay)
+(M0 Wait for robot to complete transfer)
+(Clear handshake using M code controlable relay)
+(*** END OPTIONAL TABLE WASH SECTION ***)
+
 (*** BEGIN OPTIONAL RUN OP1 CNC SETTLE PROGRAM ONLY TO BE INCLUDED IF PART CONFIGURATION USES RUN OP1 CNC SETTLE PROGRAM ***)
 (Enter CNC specific code to enable look-ahead)
 (M98 PXXXX call Op1 as a subprogram or paste in op1 gcode)
@@ -26,6 +35,28 @@ M0 (Wait for robot to complete transfer)
 (Clear handshake using M code controlable relay)
 (*** END OPTIONAL TABLE WASH SECTION ***)
 
+(Part Transfer)
+
+(*** BEGIN OPTIONAL TABLE LOAD SECTION ONLY TO BE INCLUDED IF PART CONFIGURATION USES Run Table Load Program for Vise Load after Op Transfer ***)
+(Enter CNC specific code to enable look-ahead)
+(M98 P8002 call Table Load 2 program ONLY if part configuration uses Run Table Load Program for Vise Load after Op Transfer)
+(Enter CNC specific code to disable look-ahead)
+(Set Handshake using M code controlable relay)
+(M0 Wait for robot to complete transfer)
+(Clear handshake using M code controlable relay)
+(*** END OPTIONAL TABLE WASH SECTION ***)
+
+(Loaded Op2 Jaws, now need to unload Op1 Jaws)
+
+(*** BEGIN OPTIONAL TABLE LOAD SECTION ONLY TO BE INCLUDED IF PART CONFIGURATION USES Run Table Load Program for Vise Load after Op Transfer ***)
+(Enter CNC specific code to enable look-ahead)
+(M98 P8000 call Table Load 1 program ONLY if part configuration uses Run Table Load Program for Vise Load after Op Transfer)
+(Enter CNC specific code to disable look-ahead)
+(Set Handshake using M code controlable relay)
+(M0 Wait for robot to complete transfer)
+(Clear handshake using M code controlable relay)
+(*** END OPTIONAL TABLE WASH SECTION ***)
+
 (*** BEGIN OPTIONAL RUN OP2 CNC SETTLE PROGRAM ONLY TO BE INCLUDED IF PART CONFIGURATION USES RUN OP2 CNC SETTLE PROGRAM ***)
 (Enter CNC specific code to enable look-ahead)
 (M98 PXXXX call Op1 as a subprogram or paste in op1 gcode)
@@ -40,6 +71,7 @@ M0 (Wait for robot to complete transfer)
 (Set Handshake using M code controlable relay)
 M0 (Wait for robot to complete transfer)
 (Clear handshake using M code controlable relay)
+(End with call to table Load 1 program)
 
 (*** BEGIN OPTIONAL TABLE WASH SECTION ONLY TO BE INCLUDED IF PART CONFIGURATION USES OP2 EMPTY JAWS BLOW-OFF ***)
 (Enter CNC specific code to enable look-ahead)
